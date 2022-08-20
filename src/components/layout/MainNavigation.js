@@ -1,20 +1,21 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import classes from "./MainNavigation.module.css";
 
 export default function MainNavigation() {
 	return (
-		<header>
+		<header className={classes.header}>
 			<div>MainNavigation</div>
 			<nav>
 				<ul>
 					<li>
-						<Link to="/">AllMeetups</Link>
+						<NavLink to="/">AllMeetups</NavLink>
 					</li>
 					<li>
-						<Link to="/new-meetup">NewMeetup</Link>
+						<NavLink to="/new-meetup">NewMeetup</NavLink>
 					</li>
 					<li>
-						<Link to="/favourites">NewMeetup</Link>
+						<NavLink to="/favourites">Favourites</NavLink>
 					</li>
 				</ul>
 			</nav>
