@@ -1,4 +1,5 @@
 import React from "react";
+import EventList from "../components/events/EventList";
 
 const DUMMY_DATA = [
 	{
@@ -21,13 +22,12 @@ const DUMMY_DATA = [
 	},
 ];
 
-export default function AllMeetups() {
+function AllMeetups() {
 	return (
-		<section>
+		<div>
 			<h1>AllMeetups</h1>
-			{DUMMY_DATA.map((meetup) => {
-				return <li key={meetup.id}>{meetup.title}</li>;
-			})}
-		</section>
+			<EventList meetups={DUMMY_DATA} />
+		</div>
 	);
 }
+export default AllMeetups;
