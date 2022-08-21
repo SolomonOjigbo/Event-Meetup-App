@@ -5,7 +5,7 @@ import classes from "./EventList.module.css";
 function EventList(props) {
 	return (
 		<ul className={classes.list}>
-			{props.meetups.map((meetup) => (
+			{props.meetupEvents.map((meetup) => (
 				<EventItem
 					key={meetup.id}
 					id={meetup.id}
