@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useContext } from "react";
 import Card from "../layout/Card";
 import classes from "./EventItem.module.css";
+import FavouritesContext from "../../store/favouritesContext";
 
 export default function EventItem(props) {
+	const favouriteContext = useContext(FavouritesContext);
+
+	const itemIsFavourite = favouriteContext.itemIsFavourite(props.id);
+
+	function toggleFavouriteStatus() {
+		if (itemIsFavourite) {
+			favouriteContext.removeFavourite(props.id);
+		} else {
+			favouriteContext.addFavourite({
+				id: props.id,
+				title: props.title,
+				description: props.description,
+				image: props.image,
+				address: props.address,
+			});
+		}
+	}
+
 	return (
 		<li className={classes.item}>
 			<Card>
@@ -15,7 +34,9 @@ export default function EventItem(props) {
 					<p>{props.description}</p>
 				</div>
 				<div className={classes.actions}>
-					<button>To Favourites</button>
+					<button onClick={toggleFavouriteStatus}>
+						{itemIsFavourite ? "Remove from Favourites" : "Add to Favourites"}
+					</button>
 				</div>
 			</Card>
 		</li>

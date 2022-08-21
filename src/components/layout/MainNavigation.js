@@ -9,13 +9,13 @@ export default function MainNavigation() {
 			<nav>
 				<ul>
 					<li>
-						<NavLink to="/">AllMeetups</NavLink>
+						<NavLink to="/">All Meetups</NavLink>
 					</li>
 					<li>
-						<NavLink to="/new-meetup">NewMeetup</NavLink>
+						<NavLink to="/new-meetup">New Meetup</NavLink>
 					</li>
 					<li>
-						<NavLink to="/favourites">Favourites</NavLink>
+						<NavLink to="/favourites">My Favourites</NavLink>
 					</li>
 				</ul>
 			</nav>
